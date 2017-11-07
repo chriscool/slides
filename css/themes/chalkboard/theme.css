@@ -1,0 +1,136 @@
+@import "../basic.css";
+
+@font-face {
+	font-family: 'chalk';
+	src: url('fonts/Chalk It Up.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+  background: url(img/chalkboard_texture.jpg) black;
+  color: white;
+  font-family: 'chalk';
+  min-height: 100%;
+}
+
+body > div {
+  height: 90%;
+}
+
+.slide h1 {
+  margin-top: 15px;
+}
+.slide h2 {
+  color: #CCC;
+}
+
+img {
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.no-border {
+  box-shadow: none;
+}
+
+.front-img {
+  margin: 10px auto;
+  display: block;
+}
+
+.side-img {
+  position: absolute;
+  right: 20%;
+  top: 25%;
+  max-width: 30%;
+  max-height: 80%
+}
+
+.small {
+  max-height: 4em;
+}
+.medium {
+  max-height: 6.5em;
+}
+
+.console code::before {
+  content: '> ';
+}
+
+.console code {
+  display: block;
+  color: rgb(14, 212, 14);
+  margin: 0.3em;
+}
+
+div.console {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid white;
+  margin: 1em 0;
+}
+
+ul {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+ul.no-bullet {
+  margin: 1em 0 0 0;
+  list-style: none;
+}
+
+span.flag {
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  margin-left: 0.3em;
+}
+
+.fra {
+  background-image: url('https://www.emojibase.com/resources/img/emojis/hangouts/1f1eb-1f1f7.png');
+}
+
+.eng {
+  background-image: url('http://4.bp.blogspot.com/-JN1cBcY6nCA/UE1MGA7MihI/AAAAAAAAAJ0/9np13krqb1U/s400/UK-flag-icon.png');
+}
+
+.social-media {
+  width: 50px;
+  height: 50px;
+}
+
+.social-media, .flag {
+  display: inline-block;
+  background-size: cover;
+  position: relative;
+  top: 13px;
+  margin-right: 0.2em;
+}
+
+span.twitter {
+  background-image: url('https://cdn.downdetector.com/static/uploads/c/300/0a356/twitter-logo_19.png');
+}
+span.github {
+  background-image: url('https://dynamicimagesfr-v2b.netdna-ssl.com/product_class_external_product/github_128.png');
+}
+span.linkedin {
+  background-image: url('https://dynamicimagesfr-v2b.netdna-ssl.com/product_class_external_product/linkedin_logo_initials.png');
+}
+span.malakoff {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/67/MM-Logo-2017.png');
+}
+span.silexlabs {
+  background-image: url('https://pbs.twimg.com/profile_images/685116284753719296/uwAuS5Qc.png');
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+}
+
+footer p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+}

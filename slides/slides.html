@@ -1,118 +1,122 @@
 <div class="slide-layout-title">
-	<h1>Slides</h1>
-	<h2>Presentations with HTML</h2>
+	<h1>Git</h1>
+	<h2>Initiation à une vie meilleure</h2>
+	<img class='front-img no-border' src="https://git-for-windows.github.io/img/git_logo.png" alt="git">
 </div>
 <hr>
 <div>
-	<h1>Why?</h1>
-	<p>I got fed up with using Keynote and Powerpoint to create and give presentations.  I'm a web developer for pete's sake, can't I do it in HTML?</p>
-</div>
-<hr>
-<div>
-	<h1>Yes</h1>
-	<p>So, I made a simple presentation framework for the web.  You're looking at it.</p>
-</div>
-<hr>
-<div>
-	<h1>Simple</h1>
-	<p>You just make slides in plain old HTML, and the framework will present them for you.  You can create themes and layouts with CSS.</p>
-</div>
-<hr>
-<div>
-	<h1>Examples</h1>
-	<p>The next few slides show some examples of very simple layouts you might expect to see in a slide presentation.</p>
-</div>
-<hr>
-<div class="slide-layout-title">
-	<h1>Just a Title</h1>
-</div>
-<hr>
-<div class="slide-layout-title">
-	<h1>Title</h1>
-	<h2>With Subtitle</h2>
-</div>
-<hr>
-<div>
-	<h1>Title</h1>
-	<h2>Subtitle</h2>
-	<p>This is a slide with title, subtitle, and some paragraph text. This slide uses a different layout that shifts everything upward to account for the paragraph text.</p>
-</div>
-<hr>
-<div>
-	<h1>Title</h1>
-	<h2>Subtitle and Bullets</h2>
-	<ul>
-		<li>Titles, and paragraph text are just HTML elements</li>
-		<ul>
-			<li>e.g. <code>h1</code>, <code>h2</code>, <code>p</code></li>
-		</ul>
-		<li>Bullets, of course</li>
-		<ul>
-			<li>nest,</li>
-			<ul>
-				<li>as you'd expect</li>
-			</ul>
-		</ul>
+	<h1>À propos de moi</h1>
+	<p>Jean-Baptiste Richardet</p>
+	<p>Tech Lead @ Malakoff Mederic <a href="https://malakoffmederic.com"><span class="social-media malakoff"></span></a></p>
+	<p>Secrétaire général @ Silex Labs <a href="https://www.silexlabs.org"><span class="social-media silexlabs"></span></a></p>
+	<ul class="no-bullet">
+		<li><span class="social-media twitter"></span><a href="https://twitter.com/JbIPS">@JbIPS</a></li>
+		<li><span class="social-media github"></span><a href="https://github.com/JbIPS">JbIPS</a></li>
+		<li><span class="social-media linkedin"></span><a href="https://linkedin.com/in/jbrichardet">jbrichardet</a></li>
 	</ul>
+	<img src="https://www.silexlabs.org/wp-content/uploads/2014/07/JB-capture-JB.png" alt="Photo Jean-Baptiste Richardet" class="side-img">
 </div>
 <hr>
 <div>
-	<h1>Links</h1>
-	<p>Since it's HTML, linking is easy, and means you don't have to jump out of Powerpoint or Keynote to view the link.  The back button works, too ... <a href="http://google.com/">try it</a></p>
+	<h1>Gestionnaire de version ?</h1>
+	<iframe width="1000" height="450" src="https://www.youtube.com/embed/l5SO0J_KWYw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 </div>
 <hr>
 <div>
-	<h1>More Links</h1>
-	<p>You can link to other slides, too, and the back button will still work like you think it should.  <a href="#11">Try it</a>.</p>
-</div>
-<hr>
-<div>
-	<h1>Layouts</h1>
-	<h2>Just use CSS</h2>
+	<h1>Pourquoi git ?</h1>
 	<ul>
-		<li>Layouts are just CSS classes</li>
-		<ul>
-			<li>e.g. <code>slide-layout-title</code></li>
-		</ul>
-		<li>There are a few built-in, as you've seen</li>
-		<li>You can define your own</li>
+		<li>Libre</li>
+		<li>Décentralisé</li>
+		<li>Local</li>
+		<li>Rapide</li>
 	</ul>
+	<p>GitHub n'est pas lié à git, il s'agit juste d'une plateforme offrant des dépôts git gratuits. On trouve aussi GitLab et BitBucket.</p>
 </div>
 <hr>
 <div>
-	<h1>Themes</h1>
-	<h2>You guessed it, CSS</h2>
+	<h1>Let's begin !</h1>
+	<p>On crée un répertoire qui accueillera notre dépôt et on initialise git</p>
+	<div class="console">
+		<code>mkdir ma-recette &amp;&amp; cd ma-recette</code>
+		<code>git init</code>
+	</div>
+	<img src="https://media.giphy.com/media/kkQfnuqlSifgQ/giphy.gif" alt="Cooking GIF" class="front-img medium">
+</div>
+<hr>
+<div>
+	<h1>L'index</h1>
+	<p>On crée un fichier et on ajoute notre liste d'ingrédients</p>
+	<div class="console">
+		<code>touch recette.txt</code>
+		<code>git status</code>
+	</div>
+	<p><code>git status</code> nous indique l'état de notre dépôt. Ici on voit que notre fichier n'est pas suivi, il faut l'ajouter à l'index.</p>
+	<div class="console">
+		<code>git add recette.txt</code>
+		<code>git status</code>
+	</div>
+</div>
+<hr>
+<div>
+	<h1>Le commit</h1>
+	<p>Maintenant que notre index est prêt, on peut créer un commit.</p>
+	<div class="console">
+		<code>git commit</code>
+		<code>git status</code>
+		<code>git log</code>
+	</div>
+	<img class="front-img small" src="https://media.giphy.com/media/GRYk355fcaKJi/giphy.gif" alt="Pizza GIF">
+</div>
+<hr>
+<div>
+	<h1>Le revert</h1>
+	<p>Imaginons qu'une erreur se glisse dans notre commit :</p>
+	<div class="console">
+		<code>git rm recette.txt && git commit</code>
+	</div>
+	<p>Heureusement git se peut facilement revenir dans le temps !</p>
+	<div class="console">
+		<code>git revert HEAD</code>
+	</div>
+</div>
+<hr>
+<div>
+	<h1>Get remote!</h1>
+	<p>Après ce travail en local, il est temps de partager la recette.</p>
+	<p>Créez un dépôt sur <a href="https://github.com">GitHub</a> avec le nom que vous voulez et ne l'initialisez pas.</p>
+	<div class="console">
+		<code>git remote add origin https://github.com/$USER/atelier-git.git</code>
+		<code>git push origin master</code>
+	</div>
+	<p>Vous pouvez maintenant voir votre code sur GitHub !</p>
+</div>
+<hr>
+<div>
+	<h1>Fork</h1>
+	<p>Il est possible de partir du travail de quelqu'un d'autre depuis GitHub. Allez sur le dépôt et cliquez sur "Fork"</p>
+	<img src="img/fork.png" alt="Bouton Fork" class="front-img medium">
+	<p>GitHub crée une copie chez vous. C'est de là que vous pouvez partir :</p>
+	<div class="console">
+		<code>git clone $ADRESSE_DE_VOTRE_DEPOT</code>
+	</div>
+	<p>Vous pouvez maintenant modifier comme bon vous semble les fichiers !</p>
+</div>
+<hr>
+<div>
+	<h1>Pull Request</h1>
+	<p>Comme il est interdit de pousser contenu sur un dépôt qui ne nous appartient pas, on passe par une Pull Request</p>
+	<img src="img/pull request.png" alt="Bouton Pull Request" class="front-img medium">
+	<p>Dès que le propriétaire aura accepté votre requête, votre modification sera intégrée dans son dépôt.</p>
+	<img src="http://www.reactiongifs.com/r/poppin1.gif" alt="Joie GIF" class="front-img medium">
+</div>
+<hr>
+<div>
+	<h1>Pour aller plus loin</h1>
+	<p>Ces quelques liens vous permettrons d'approfondir vos connaissances. À la fin vous pourrez même modifier cette présentation !</p>
 	<ul>
-		<li>Themes are also CSS classes</li>
-		<li>You're looking at the 'gray' theme right now</li>
-		<li>You can, of course, define your own</li>
+		<li><a href="https://try.github.io/levels/1/challenges/1">Try Git - GitHub<span class="flag eng"></span></a></li>
+		<li><a href="https://openclassrooms.com/courses/gerez-vos-codes-source-avec-git">Git - OpenClassrooms<span class="flag fra"></span></a></li>
+		<li><a href="https://rogerdudler.github.io/git-guide/index.fr.html">Git Guide - Roger Dudler<span class="flag fra"></span></a></li>
+		<li><a href="https://git-scm.com/docs/gittutorial">Git tutorial - Git foundation<span class="flag eng"></span></a></li>
 	</ul>
-</div>
-<hr>
-<div>
-	<h1>Transitions</h1>
-	<h2>CSS again!</h2>
-	<ul>
-		<li>Slide transitions are defined using CSS3</li>
-		<li>This presentation uses the 'fade' transition</li>
-		<li>Can be integrated into a theme or mixed-and-matched</li>
-		<li>And yep, you can define your own</li>
-	</ul>
-</div>
-<hr>
-<div>
-	<h1>Mobile</h1>
-	<h2>Landscape, portrait, touch, swipe</h2>
-	<p>It has mobile viewport support in the builtin template and themes, plus touch and swipe event support for navigation.</p>
-</div>
-<hr>
-<div>
-	<h1>Engineered</h1>
-	<h2>MVC, OOCSS, and AMD</h2>
-	<p>Cutting edge tech, packaged for simplicity.  Use it out of the box, or drop in code for your own slide models, views, and controllers.</p>
-</div>
-<hr>
-<div class="slide-layout-title">
-	<h1>Get it</h1>
-	<h2>Now available on <a href="https://github.com/briancavalier/slides">github</a></h2>
 </div>
