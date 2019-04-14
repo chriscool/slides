@@ -48,14 +48,14 @@
 <hr>
 <div>
 	<h1>L'index</h1>
-	<p>On crée un fichier et on ajoute notre liste d'ingrédients</p>
+	<p>On crée un fichier "recette.txt" ou "utils.sh" et on demande a Git de suivre ce fichier</p>
 	<div class="console">
-		<code>touch recette.txt</code>
+		<code>touch NOM-DE-FICHIER-CHOISI-CI-DESSUS</code>
 		<code>git status</code>
 	</div>
-	<p><code>git status</code> nous indique l'état de notre dépôt. Ici on voit que notre fichier n'est pas suivi, il faut l'ajouter à l'index.</p>
+	<p><code>git status</code> nous indique l'état de notre dépôt. Ici on voit que notre fichier n'est pas suivi, il faut l'ajouter à l'index (des fichiers suivis par Git).</p>
 	<div class="console">
-		<code>git add recette.txt</code>
+		<code>git add NOM-DE-FICHIER-CHOISI-CI-DESSUS</code>
 		<code>git status</code>
 	</div>
 </div>
@@ -65,10 +65,23 @@
 	<p>Maintenant que notre index est prêt, on peut créer un commit.</p>
 	<div class="console">
 		<code>git commit</code>
+		<code>git show</code>
 		<code>git status</code>
 		<code>git log</code>
 	</div>
 	<img class="front-img small" src="https://media.giphy.com/media/GRYk355fcaKJi/giphy.gif" alt="Pizza GIF">
+</div>
+<hr>
+<div>
+	<h1>Commiter du contenu dans le fichier</h1>
+	<p>On peut maintenant éditer le fichier, le modifier et y ajouter ou retirer du contenu.</p>
+	<p>Par exemple si on utilise le programme "nano" comme éditeur de texte</p>
+	<div class="console">
+		<code>nano NOM-DE-FICHIER-CHOISI</code>
+		<code>git commit NOM-DE-FICHIER-CHOISI</code>
+		<code>git show</code>
+		<code>git log</code>
+	</div>
 </div>
 <hr>
 <div>
