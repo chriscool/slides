@@ -2,6 +2,7 @@
 	<h1>Git</h1>
 	<h2>Initiation à une vie meilleure</h2>
 	<img class='front-img no-border' src="https://git-for-windows.github.io/img/git_logo.png" alt="git">
+	<p>Présentation disponible en ligne sur <a href="https://chriscool.github.io/slides/">https://chriscool.github.io/slides/</a></p>
 </div>
 <hr>
 <div>
@@ -25,8 +26,10 @@
 		<li>Rapide</li>
 		<li>Utilisé par au moins 80% des développeurs dans le monde</li>
 	</ul>
-	<p>GitHub n'est pas lié à Git, il s'agit juste d'une plateforme offrant des dépôts Git gratuits. On trouve aussi GitLab et BitBucket.</p>
-	<p>Disponible sur <a href="https://git-scm.com/">https://git-scm.com/</a></p>
+	<p>GitLab et GitHub ne sont pas lié à Git, il s'agit juste de
+	plateformes offrant des dépôts Git gratuits. On trouve aussi
+	BitBucket, SourceForge, Savannah, AWS CodeCommit, etc.</p>
+	<p>Git est disponible et téléchargeable depuis <a href="https://git-scm.com/">https://git-scm.com/</a></p>
 </div>
 <hr>
 <div>
@@ -78,6 +81,7 @@
 	<p>Par exemple si on utilise le programme "nano" comme éditeur de texte</p>
 	<div class="console">
 		<code>nano NOM-DE-FICHIER-CHOISI</code>
+		<code># ajouter du contenu dans le fichier</code>
 		<code>git commit NOM-DE-FICHIER-CHOISI</code>
 		<code>git show</code>
 		<code>git log</code>
@@ -85,10 +89,33 @@
 </div>
 <hr>
 <div>
+	<h1>Quel contenu mettre dans le fichier</h1>
+	<p>Si vous éditez une recette de cuisine ("recette.txt") vous
+	pouvez expliquer de quel plat il s'agit, ingrédients
+	nécessaires, la recette proprement dite, etc.</p>
+	<p>Si vous éditez éditez un script shell ("utils.sh"), vous
+	pouvez vous créer des alias ou des fonctions Shell pour vous
+	simplifier la vie avec Git, par exemple:</p>
+	<div class="console">
+		<code>alias glog='git log'</code>
+		<code>alias gdog='git log --decorate --oneline --graph'</code>
+		<code>grp() { git grep -l "$1" | xargs perl -pi -e "s/$1/$2/g"; }</code>
+	</div>
+	<p>Vous pouvez ensuite "sourcer" votre script dans le shell
+	courant (ou dans votre ~/.bashrc) pour pouvoir utiliser les
+	alias et fonctions que vous avez créés:</p>
+	<div class="console">
+		<code>. utils.sh</code>
+		<code>gdog</code>
+	</div>
+</div>
+<hr>
+<div>
 	<h1>Le revert</h1>
 	<p>Imaginons qu'une erreur se glisse dans notre commit :</p>
 	<div class="console">
-		<code>git rm recette.txt &amp;&amp; git commit</code>
+		<code>git rm recette.txt</code>
+		<code>git commit</code>
 	</div>
 	<p>Heureusement git peut facilement revenir dans le temps !</p>
 	<div class="console">
@@ -99,28 +126,28 @@
 <div>
 	<h1>Get remote!</h1>
 	<p>Après ce travail en local, il est temps de partager la recette.</p>
-	<p>Créez un dépôt sur <a href="https://github.com">GitHub</a> avec le nom que vous voulez et ne l'initialisez pas.</p>
+	<p>Créez un dépôt sur <a href="https://gitlab.com">GitLab</a> ou <a href="https://github.com">GitHub</a> avec le nom que vous voulez et ne l'initialisez pas.</p>
 	<div class="console">
-		<code>git remote add origin https://github.com/$USER/atelier-git.git</code>
+		<code>git remote add origin https://$GITLAB_OU_GITHUB.com/$USER/atelier-git.git</code>
 		<code>git push origin master</code>
 	</div>
-	<p>Vous pouvez maintenant voir votre code sur GitHub !</p>
+	<p>Vous pouvez maintenant voir votre code sur GitLab ou GitHub !</p>
 </div>
 <hr>
 <div>
 	<h1>Fork</h1>
-	<p>Il est possible de partir du travail de quelqu'un d'autre depuis GitHub. Allez sur le dépôt et cliquez sur "Fork"</p>
+	<p>Il est possible de partir du travail de quelqu'un d'autre depuis GitLab ou GitHub. Allez sur le dépôt et cliquez sur "Fork"</p>
 	<img src="img/fork.png" alt="Bouton Fork" class="front-img medium">
-	<p>GitHub crée une copie chez vous. C'est de là que vous pouvez partir :</p>
+	<p>GitHub ou GitLab crée une copie chez vous. C'est de là que vous pouvez partir :</p>
 	<div class="console">
 		<code>git clone $ADRESSE_DE_VOTRE_DEPOT</code>
 	</div>
 	<p>Vous pouvez maintenant modifier comme bon vous semble les fichiers !</p>
 </div>
 <hr>
-<div>
-	<h1>Pull Request</h1>
-	<p>Comme il est interdit de pousser du contenu sur un dépôt qui ne nous appartient pas, on passe par une Pull Request</p>
+a<div>
+	<h1>Merge ou Pull Request</h1>
+	<p>Comme il est interdit de pousser du contenu sur un dépôt qui ne nous appartient pas, on passe par une Pull Request (GitHub) ou une Merge Request (GitLab)</p>
 	<img src="img/pull request.png" alt="Bouton Pull Request" class="front-img medium">
 	<p>Dès que le propriétaire aura accepté votre requête, votre modification sera intégrée dans son dépôt.</p>
 	<img src="http://www.reactiongifs.com/r/poppin1.gif" alt="Joie GIF" class="front-img medium">
@@ -131,8 +158,12 @@
 	<p>Ces quelques liens vous permettrons d'approfondir vos connaissances. À la fin vous pourrez même modifier cette présentation !</p>
 	<ul>
 		<li><a href="https://try.github.io/levels/1/challenges/1">Try Git - GitHub<span class="flag eng"></span></a></li>
+		<li><a href="https://learngitbranching.js.org/">Learn Git Branching<span class="flag fra"></span></a></li>
 		<li><a href="https://openclassrooms.com/courses/gerez-vos-codes-source-avec-git">Git - OpenClassrooms<span class="flag fra"></span></a></li>
 		<li><a href="https://rogerdudler.github.io/git-guide/index.fr.html">Git Guide - Roger Dudler<span class="flag fra"></span></a></li>
 		<li><a href="https://git-scm.com/docs/gittutorial">Git tutorial - Git foundation<span class="flag eng"></span></a></li>
+		<li><a href="https://git.github.io/rev_news/archive/">Git Rev News - Newsletter Git<span class="flag eng"></span></a></li>
+		<li><a href="https://exercism.io/tracks/bash">Exercices Bash - Exercism<span class="flag eng"></span></a></li>
+		<li><a href="https://github.com/chriscool/slides/">Repo de cette présentation - GitHub/chriscool<span class="flag eng"></span></a></li>
 	</ul>
 </div>
